@@ -7,7 +7,7 @@ export const SBackground = css`
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    background-color: #4b81da;
+    background-color: #ee8e7a;
     border-radius: 15px;
     width: 720px;
     height: 440px;
@@ -31,12 +31,16 @@ export const STextStrong = css`
 export const SText = css`
     margin-top: 5px;
     text-align: center;
+
+    &:first-of-type {
+        margin-top: 10px;
+    }
 `;
 
 export const STextSmall = css`
     margin-top: 10px;
     text-align: center;
-    color: #d1F7FE;
+    color: white;
     font-size: 16px;
 `;
 
@@ -49,8 +53,8 @@ export const SImgBox = css`
 `;
 export const SImg = css`
     margin-top: 27px   ;
-    width: 235px;
-    height: 155px;
+    width: 225px;
+    height: 180px;
     align-self: center;
 `;
 
