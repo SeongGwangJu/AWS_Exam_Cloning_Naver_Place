@@ -24,7 +24,8 @@ function UserInfo(props) {
             <div css={S.SLowerBtns}>
                     <button css={S.SWriteReviewBtn}>
                         <PiPencilSimpleLineFill  css={S.SWriteReviewIcon}/>
-                        리뷰 쓰기</button>
+                        리뷰 쓰기
+                    </button>
                     <button css={S.SMissionBtn}>
                         <AiOutlineCheckCircle  css={S.SMissionIcon}/>
                         미션

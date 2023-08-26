@@ -1,6 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
+export const SContainer = css`
+    width: 100%;
+    padding: 25px 20px;
+`;
 export const SBackground = css`
     display: flex;
     flex-direction: column;

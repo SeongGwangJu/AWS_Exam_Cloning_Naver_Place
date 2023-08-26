@@ -10,8 +10,8 @@ export const SCommon = css`
         border: none;
         width: 5px;
         background-color: #dbdbdb40;
-
     }
+    
     *::-webkit-scrollbar-thumb{
         border-radius: 5px;
         background-color: #99999970;

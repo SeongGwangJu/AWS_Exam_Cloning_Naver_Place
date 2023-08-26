@@ -3,14 +3,16 @@ import React from 'react';
 import * as S from './Style';
 import CustomViewType from './CustomViewType/CustomViewType';
 import CategoryViewType from './CategoryViewType/CategoryViewType';
+import MainContainer from '../MainContainer';
 
 
 function Feed(props) {
     return (
-        <div css={S.SLayout}>
+        <MainContainer>
             <CustomViewType />
             <CategoryViewType />
-        </div>
+        </MainContainer>
+
     );
 }
 
