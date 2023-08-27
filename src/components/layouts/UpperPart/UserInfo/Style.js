@@ -32,7 +32,7 @@ export const SImgBox = css`
 `;
 
 export const SImgBorder =css`
-    position: relative;     
+    position: relative;
     width: 64px;
     height: 64px;
     border-radius: 50%;

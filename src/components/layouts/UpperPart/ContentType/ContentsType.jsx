@@ -46,7 +46,7 @@ function ContentsType(props) {
         <div css={S.SLayout}>
             <ul css={S.ContentTypeBox}>
                 {ContentsTypeList.map(ContentsType => (
-                    <button css={S.SContentTypelist(location.pathname.startsWith(ContentsType.path))}
+                    <button css={S.SContentTypelist(location.pathname.includes(ContentsType.path))}
                         key={ContentsType.id}
                         onClick={() => {handleContentsTypeClick(ContentsType.path);
                     }}>

@@ -4,6 +4,7 @@ import * as S from './Style';
 import CustomViewType from './CustomViewType/CustomViewType';
 import CategoryViewType from './CategoryViewType/CategoryViewType';
 import MainContainer from '../MainContainer';
+import Content from './Content/Content';
 
 
 function Feed(props) {
@@ -11,6 +12,7 @@ function Feed(props) {
         <MainContainer>
             <CustomViewType />
             <CategoryViewType />
+            <Content />
         </MainContainer>
 
     );

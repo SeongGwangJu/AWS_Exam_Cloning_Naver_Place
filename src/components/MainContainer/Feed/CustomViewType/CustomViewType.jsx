@@ -40,7 +40,7 @@ function CustomViewType(props) {
                 <div css={S.SViewTypeBtnListBoxs}>
                     {ViewTypeBtnList.map(ViewTypeBtn => (
                         <div css={S.SViewTypeBtnListBox}>
-                            <button css={S.SViewTypeBtnList(location.pathname.startsWith(ViewTypeBtn.path))}
+                            <button css={S.SViewTypeBtnList(location.pathname === ViewTypeBtn.path)}
                                 key={ViewTypeBtn.id}
                                 onClick={() => {handleViewTypeBtnClick(ViewTypeBtn.path);
                             }}>

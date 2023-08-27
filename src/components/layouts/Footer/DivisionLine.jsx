@@ -2,7 +2,7 @@ import React from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-const SDividingLine = css`
+const SDivisionLine = css`
     align-self: center;
     border: 1px solid #00000010;
     margin: 2px 9px 0px 9px ;
@@ -12,7 +12,7 @@ const SDividingLine = css`
 
 function DivisionLine(props) {
     return (
-        <div css={SDividingLine} />
+        <div css={SDivisionLine} />
     );
 }
 

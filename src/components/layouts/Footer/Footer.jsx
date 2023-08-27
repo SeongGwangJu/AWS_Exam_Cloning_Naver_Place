@@ -1,7 +1,7 @@
 import React from 'react';
 /** @jsxImportSource @emotion/react */
 import * as S from './Style';
-import DivisionLine from '../../../utils/DivisionLine';
+import DivisionLine from './DivisionLine';
 
 function Footer(props) {
     return (

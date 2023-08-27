@@ -7,31 +7,35 @@ export const SContainer = css`
     align-items: center;
     justify-content: space-between;
     width: 720px;
-    height: 66px;
+    height: 47.33px;
+    margin: 0px -20px;
+    padding: 10px 0px 2px;
+
 `;
 
-export const SViewTypeBtnListBoxs = css`
-    justify-self: left;
+export const SCategoryBtnListBoxs = css`
+    width: 720px;
+    height: 35.33px;
+    position: relative;
+    overflow: hidden;
+`;
+
+export const SHiddenScrollBox = (scrollValue) => css`
+    width: 720px;
+    height: 35.33px;
     display: flex;
-    overflow-x: hidden;
-    
-    & > ::-webkit-scrollbar{
-        border: none;
-        width: 1px;
-        background-color: #dbdbdb40;
-    }
-    
-    *::-webkit-scrollbar-thumb{
-        border-radius: 1px;
-        background-color: #99999970;
-    }
-
+    justify-self: left;
+    transform: translateX(-${scrollValue}px);
+    transition: transform 0.4s ease;
+    cursor: pointer;
 `;
 
 
-export const SViewTypeBtnListBox = css`
+export const SCategoryBtnListBox = css`
     padding: 0px 0px 0px 6px;
-    height: 35.21px;
+    height: 35.33px;
+
+
     &:first-of-type {
         padding: 0px 0px 0px 20px
     }
@@ -41,7 +45,7 @@ export const SViewTypeBtnListBox = css`
 
 `;
 
-export const SViewTypeBtnList = (isSelected) => css`
+export const SCategoryBtnList = (isSelected) => css`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,4 +60,35 @@ export const SViewTypeBtnList = (isSelected) => css`
     font-size: 14px;
     white-space: nowrap;
     cursor: pointer;
+`;
+
+export const SPreviousBtn = (isVisible) => css`
+    visibility: ${isVisible ? "visible" :"hidden"};
+    position :absolute;
+    top: 50%;
+    left: -10px;
+    z-index: 10;
+    background-image: linear-gradient(270deg,rgba(248,250,251,0),#f8fafb 28px);
+    transform: translateY(-50%);
+    border-radius: 50%;
+    width: 46px;
+    height: 35.33px;
+    cursor: pointer;
+    font-size: 12px;
+    `;
+
+export const SNextBtn = (isVisible) => css`
+    visibility: ${isVisible ? "visible" :"hidden"};
+    position :absolute;
+    top: 50%;
+    right: -10px;
+    z-index: 10;
+    background-image: linear-gradient(90deg,rgba(248,250,251,0),#f8fafb 28px);
+    transform: translateY(-50%);
+    border-radius: 50%;
+    width: 46px;
+    height: 35.33px;
+    cursor: pointer;
+    font-size: 12px;
+    
 `;

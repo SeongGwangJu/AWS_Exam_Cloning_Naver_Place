@@ -19,7 +19,10 @@ function App() {
     <Global styles={S.SCommon} />
     <MainLayout>
       <Routes>
+        <Route element={ <FeedPage />} />
         <Route path="/feed" element={ <FeedPage /> } />
+        <Route path="/feed/following" element={ <FeedPage /> } />
+        <Route path="/feed/favorited" element={ <FeedPage /> } />
         <Route path="/timeline" element={ <TimelinePage /> } />
         <Route path="/review" element={ <ReviewPage /> } />
         <Route path="/booked" element={ <BookedPage /> } />
