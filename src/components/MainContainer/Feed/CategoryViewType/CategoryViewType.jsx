@@ -85,72 +85,96 @@ function CategoryCategory(props) {
         },
     ]
 
-
     //버튼의 위치를 어림잡아주는 함수
-    const calculateScrollValue = (id) => {
-        let sum = 0;
-        for (let i = 0; i < id; i++) {
-            sum += CategoryBtnList[i].name.length;
-        }
-        let value = 14 + sum * 14 + id * 33.33;
-        return value;
-    }
-    //오른쪽 버튼의 visible 상태 update를 위해 최대스크롤 값을 구함
-    const maxScrollValue = calculateScrollValue(CategoryBtnList.slice(-1)[0].id);
+    const calculateScrollValueByBtnId = (id) => {
+        let buttonNameLengthSum = 0;
 
-    //커서를 올리면 현재 스크롤의 정도에 따라 버튼 Visible상태를 변하게 함.
-    const handleMouseEnter = () => {
-        if(scrollValue < 360) {
-            setIsPreviousButtonsVisible(false);
-        } else {
-            setIsPreviousButtonsVisible(true);
+        for (let i = 0; i < id; i++) {
+            buttonNameLengthSum += CategoryBtnList[i].name.length;
         }
-        
-        if((maxScrollValue - scrollValue) < 360) {
+
+        //한글자마다 14px이 늘고
+        //버튼의 개수당 33.33px씩 늘어남
+        let buttonLocation = 14 + (buttonNameLengthSum * 14) + (id * 33.33);
+        return buttonLocation;
+    }
+
+    //next버튼의 visible 상태 update + 스크롤이 너무 많이 가지 않도록
+    //마지막 버튼의 위치를 구함
+    const LastBtnLocation = calculateScrollValueByBtnId(CategoryBtnList.slice(-1)[0].id);
+
+    //커서를 올리면 현재 스크롤된 정도에 따라 버튼 Visible상태를 변하게 함.
+    const handleMouseEnter = () => {
+        if(scrollValue > 370) {
+            setIsPreviousButtonsVisible(true);
+        } else {
+            setIsPreviousButtonsVisible(false );
+        }
+
+        if((LastBtnLocation - scrollValue) < 360) {
             setIsNextButtonsVisible(false);
         } else {
             setIsNextButtonsVisible(true);
         }
     };
-    
-        //여기서부터 클릭이벤트 //
 
-    //카테고리
-    const handleCategoryBtnClick = (id, name) => {
-        //클릭시스타일 변경
-        setSelectedId(id);
-        
-        //클릭한 카테고리가 중앙에 위치하도록 스크롤을 옮김
-        //클릭된 값의 좌표가 중앙을 넘으면 값이 변한다
-        if(calculateScrollValue(id) > 360) {
-            setScrollValue(calculateScrollValue(id));
-            setIsPreviousButtonsVisible(true);
-        } else {
-            setScrollValue(-(calculateScrollValue(id)-370))
-            setIsPreviousButtonsVisible(false);
-        }
-        
-        //호버 이벤트없이도 버튼을 누르는 즉시 변경하기위해
-        //여기에서도 Visible 상태를 수정함
-        if((maxScrollValue - calculateScrollValue(id)) < 360) {
-            setIsNextButtonsVisible(false);
-        } else {
-            setIsNextButtonsVisible(true);
-        }
-    }
-
-    //커서가 떠나면 무조건 버튼이 사라짐
+    //커서가 떠나면 버튼이 사라진다
     const handleMouseLeave = () => {
         setIsPreviousButtonsVisible(false);
         setIsNextButtonsVisible(false);
     };
+    //카테고리 버튼을 클릭시
+    //스타일 + 스크롤 + '<>'버튼 visible 변경
+    const handleCategoryBtnClick = (id, name) => {
+        //id를 변경해 선택된 버튼만 스타일 변경해줌
+        setSelectedId(id);
 
-    //버튼 클릭시 왼쪽 또는 오른쪽으로 720px만큼 이동
+        // 누른 버튼의 위치에따라 스크롤과 버튼상태 변경함
+        if(calculateScrollValueByBtnId(id) < 370) { //첫버튼이 보일 때
+            setScrollValue(-(calculateScrollValueByBtnId(id)-370))
+            setIsPreviousButtonsVisible(false);
+
+        //처음 상태보다 스크롤이 조금이라도 증가했고
+        //마지막 버튼이 모두 보이지 않을 때
+        } else if((calculateScrollValueByBtnId(id)) >370 &&
+        (LastBtnLocation - calculateScrollValueByBtnId(id)) > 370 ) {
+            setScrollValue(calculateScrollValueByBtnId(id));
+            setIsPreviousButtonsVisible(true);
+            setIsNextButtonsVisible(true);
+
+        //마지막 버튼이 모두 보이면 더이상 스크롤을 옮기지 않음
+        } else {
+            setScrollValue(LastBtnLocation-330)
+            setIsNextButtonsVisible(false);
+        }
+    };
+
+    //왼쪽버튼 클릭시 왼쪽으로 720px만큼 이동함
     const handlePreviousBtnClick = () => {
-        setScrollValue(scrollValue - 720);
+
+        // 720px만큼 이동하는 조건 : 적당히 오른쪽일때
+        if(scrollValue > 1090) {
+            setScrollValue(scrollValue - 720);
+
+        // 많이 옮길 필요가 없으면 적당히 옮기고 버튼 사라짐
+        }else {
+            setScrollValue(370);
+            setIsPreviousButtonsVisible(false);
+        }
     }
+
     const handleNextBtnClick = () => {
-        setScrollValue(scrollValue + 720);
+        //720px만큼 이동했을 때 마지막 버튼이 보일정도면
+        //최대치로 이동하고 다음 버튼이 사라진다
+        if(scrollValue > (LastBtnLocation-1090)) {
+            setScrollValue(LastBtnLocation-330)
+            setIsNextButtonsVisible(false);
+
+        //버튼을 한번 더 눌러도 마지막 버튼이 안보인다면
+        //720px만큼 이동한다
+        } else {
+            setScrollValue(scrollValue + 720);
+        }
     }
 
     return (

@@ -54,6 +54,7 @@ export const SImg = css`
 export const SUserInfoTextBox = css`
   margin-top: 3px;
   text-align: left;
+  cursor: pointer;
 `;
 
 export const SUsername = css`
@@ -98,4 +99,5 @@ export const SEtcIconBox = css`
 
 export const SEtcIcon = css`
   font-size: 16px;
+  cursor: pointer;
 `;

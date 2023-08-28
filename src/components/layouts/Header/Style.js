@@ -27,7 +27,7 @@ export const SLogoBox = css`
     background-color: white;
     color: transparent;
     margin-right: 10px;
-    padding: 6px 6px;
+    padding: 5px 5px;
     font-size: 11px;
 
 `;
@@ -48,7 +48,6 @@ export const SCouponBox = css`
     display: flex;
     position: relative;
     background-color: transparent;
-    align-items: center;
     border: none;
     margin: 0px 6px;
     padding-top: 5px;
@@ -60,20 +59,17 @@ export const SCouponBox = css`
 export const SCouponIcon = css`
     width: 40px;
     height: 40px;
-    font-size: 300px;
-    
+    font-weight: 400;
 `;
 export const SCouponText = css`
     position: absolute;
     transform: translate(-50%, -50%);
     text-align: center;
-    font-weight: 900;
-    color: white;
-    top: 55%;
+    font-weight: 600;
+    top: 60%;
     left: 50%;
     font-size: 12px;
     white-space: nowrap;
-    
 `;
 
 export const SMenuBtn = css`
