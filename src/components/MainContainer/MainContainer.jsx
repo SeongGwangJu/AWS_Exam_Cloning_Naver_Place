@@ -1,14 +1,12 @@
-import React from 'react';
+import React from "react";
 /** @jsxImportSource @emotion/react */
-import * as S from './Style';
+import * as S from "./Style";
 
-function MainContainer( {children}) {
-    return (
+function MainContainer({ children }) {
+	return
         <div css={S.SLayout}>
             {children}
-        </div>
-
-    );
+        </div>;
 }
 
 export default MainContainer;
