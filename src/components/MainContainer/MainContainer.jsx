@@ -3,10 +3,11 @@ import React from "react";
 import * as S from "./Style";
 
 function MainContainer({ children }) {
-	return
+	return (
         <div css={S.SLayout}>
             {children}
-        </div>;
+        </div>
+    );
 }
 
 export default MainContainer;

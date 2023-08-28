@@ -5,13 +5,14 @@ import CustomViewType from "./CustomViewType/CustomViewType";
 import CategoryViewType from "./CategoryViewType/CategoryViewType";
 import MainContainer from "../MainContainer";
 import Content from "./Content/Content";
+import FeedList from "../../../constants/FeedList";
 
 function Feed(props) {
 	return (
 		<MainContainer>
 			<CustomViewType />
 			<CategoryViewType />
-			<Content />
+			{FeedList.map(feed => <Content feed={feed}/>)}
 		</MainContainer>
 	);
 }

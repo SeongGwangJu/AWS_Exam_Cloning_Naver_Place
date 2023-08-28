@@ -11,13 +11,10 @@ function ImgArea(props) {
 				<div css={S.SPhotoBoxs}>
 					<div css={S.SPhotoBox}>
 						<img
-							css={[S.SPhoto, S.SPhotoFirst]}
-							src={img1}
-							alt=""
-						/>
+							css={[S.SPhoto, S.SPhotoFirst]} src={img1} />
 					</div>
 					<div css={S.SPhotoBox}>
-						<img css={[S.SPhoto, S.SPhotoLast]} src={img2} alt="" />
+						<img css={[S.SPhoto, S.SPhotoLast]} src={img2} />
 					</div>
 					<div css={S.SLocationContainer}>
 						<div css={S.SLocationBox}>

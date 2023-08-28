@@ -1,0 +1,55 @@
+export const FeedList = [
+	{
+		id: 1, //unique
+		category: "한식",
+		Location: "부산시 금정구 장전동",
+		username: "임소은",
+		profileImg: "https://m.place.naver.com/my/_next/static/image/_/assets/images/icon_profile_default.cf1f777d594520630ff249eb31ab38c2.png",
+		reviewCount: 49,
+		followerCount: 0,
+		imgBoxCount: 2,
+		imgLink: "",
+		Location: "",
+		reviewTxt: "",
+		selectedSticker: "",
+		date: "",
+		placeName: "",
+	},
+	{
+		id: 2, //unique
+		category: "카페",
+		Location: "",
+		username: "",
+		profileImg: "",
+		reviewCount: 0,
+		followerCount: 0,
+		imgBoxCount: 2,
+		imgLink: "",
+		Location: "",
+		reviewTxt: "",
+		selectedSticker: "",
+		date: "",
+		placeName: "",
+	},
+	{
+		id: 3, //unique
+		category: "양식",
+		Location: "",
+		username: "",
+		profileImg: "",
+		reviewCount: 0,
+		followerCount: 0,
+		imgBoxCount: 2,
+		imgLink: "",
+		Location: "",
+		reviewTxt: "",
+		selectedSticker: "",
+		date: "",
+		placeName: "",
+	},
+
+	{ id: 2, name: "카페" },
+	{ id: 3, name: "양식" },
+	{ id: 4, name: "중식" },
+];
+export default FeedList;

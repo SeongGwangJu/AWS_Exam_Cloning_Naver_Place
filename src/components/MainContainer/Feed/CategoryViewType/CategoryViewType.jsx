@@ -2,6 +2,7 @@ import React, { useState } from "react";
 /** @jsxImportSource @emotion/react */
 import * as S from "./Style";
 import { GrPrevious, GrNext } from "react-icons/gr";
+import CategoryBtnList from "../../../../constants/CategoryBtnList"
 
 function CategoryCategory(props) {
 	// for 카테고리 버튼의 Active Style 변경
@@ -15,30 +16,6 @@ function CategoryCategory(props) {
 	const [isNextButtonsVisible, setIsNextButtonsVisible] = useState(true);
 	const [scrollValue, setScrollValue] = useState(0);
 	//버튼의 리스트 관리
-	const CategoryBtnList = [
-		{ id: 1, name: "한식" },
-		{ id: 2, name: "카페" },
-		{ id: 3, name: "양식" },
-		{ id: 4, name: "중식" },
-		{ id: 5, name: "분식" },
-		{ id: 6, name: "치킨" },
-		{ id: 7, name: "가족식사" },
-		{ id: 8, name: "놀이공원" },
-		{ id: 9, name: "놀이터" },
-		{ id: 10, name: "어린이집" },
-		{ id: 11, name: "문화재" },
-		{ id: 12, name: "자연명소" },
-		{ id: 13, name: "일식" },
-		{ id: 14, name: "뷔페" },
-		{ id: 15, name: "물놀이" },
-		{ id: 16, name: "숙박" },
-		{ id: 17, name: "피크닉" },
-		{ id: 18, name: "등산" },
-		{ id: 19, name: "레저" },
-		{ id: 20, name: "액티비티" },
-		{ id: 21, name: "트레킹" },
-		{ id: 22, name: "체험관광" },
-	];
 
 	//버튼의 위치를 어림잡아주는 함수
 	const calculateScrollValueByBtnId = (id) => {

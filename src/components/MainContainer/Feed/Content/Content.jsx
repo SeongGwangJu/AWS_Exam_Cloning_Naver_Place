@@ -8,7 +8,9 @@ import Sticker from "./Sticker/Sticker";
 import FeedbackAndDate from "./FeedbackAndDate/FeedbackAndDate";
 import Location from "./Location/Location";
 
-function Content(props) {
+
+
+function Content({ feed }) {
 	return (
 		<ul css={S.SLayout}>
 			<li>
@@ -20,8 +22,8 @@ function Content(props) {
 					<FeedbackAndDate />
 					<Location />
 				</div>
+				<div css={S.SMarginBottom} />
 			</li>
-			<div css={S.SMarginEffect} />
 		</ul>
 	);
 }
