@@ -3,7 +3,8 @@ import React from "react";
 import * as S from "./Style";
 import { FiMoreVertical } from "react-icons/fi";
 
-function UserInfo(props) {
+function UserInfo( {profileImg, username, reviewCount, followerCount,
+	} ) {
 	return (
 		<div css={S.SContainer}>
 			<div css={S.SHeaderContainer}>
@@ -12,23 +13,22 @@ function UserInfo(props) {
 						<div css={S.SImgBox}>
 							<div css={S.SImgBorder}>
 								<img
-									src="https://m.place.naver.com/my/_next/static/image/_/assets/images/icon_profile_default.cf1f777d594520630ff249eb31ab38c2.png"
+									src={profileImg}
 									css={S.SImg}
 								/>
 							</div>
 						</div>
 					</div>
 					<div css={S.SUserInfoTextBox}>
-						<div css={S.SUsername}>임소은</div>
+						<div css={S.SUsername}>{username}</div>
 						<div css={S.SUserInfo}>
 							<span css={S.SSpanMargin}>
-								{" "}
 								사진리뷰
-								<em> 49</em>
+								<em>{reviewCount}</em>
 							</span>
 							<span css={S.SSpanMargin}>
 								팔로워
-								<em> 0</em>
+								<em>{followerCount}</em>
 							</span>
 						</div>
 					</div>

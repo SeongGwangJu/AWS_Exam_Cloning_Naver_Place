@@ -4,7 +4,7 @@ import * as S from "./Style";
 import { AiOutlineRight } from "react-icons/ai";
 import { BiStar } from "react-icons/bi";
 
-function Location(props) {
+function Location({ location, placeName, category }) {
 	return (
 		<div css={S.SLocationContainer}>
 			<div css={S.SLocationBorderBox}>
@@ -12,13 +12,13 @@ function Location(props) {
 					<div css={S.SLeft}>
 						<div css={S.SPlaceNameBox}>
 							<button css={S.SPlaceNameBtn}>
-								<span css={S.SPlaceNameTxt}>어랏?커피</span>
+								<span css={S.SPlaceNameTxt}>{placeName}</span>
 								<AiOutlineRight css={S.SPlaceNameIcon} />
 							</button>
 						</div>
 						<div css={S.SCategoryAndCityBox}>
-							<span css={S.SCategory}>카페</span>·
-							<span css={S.SCity}>부산광역시 금정구 장전동</span>
+							<span css={S.SCategory}>{category}</span>·
+							<span css={S.SCity}>{location}</span>
 						</div>
 					</div>
 					<div css={S.SRight}>

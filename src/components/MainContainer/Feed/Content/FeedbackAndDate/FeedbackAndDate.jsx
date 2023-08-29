@@ -3,7 +3,7 @@ import React from "react";
 import * as S from "./Style";
 import { BsEmojiSmile } from "react-icons/bs";
 
-function FeedbackAndDate(props) {
+function FeedbackAndDate({ date }) {
 	return (
 		<div css={S.SFeedBackAndReviewDateContainer}>
 			<div css={S.SFeedBackBox}>
@@ -16,7 +16,7 @@ function FeedbackAndDate(props) {
 			</div>
 			<div css={S.SReviewDateContainer}>
 				<span css={S.SDateText}>
-					<span>8.28 월</span>
+					<span>{date}</span>
 					방문
 				</span>
 			</div>

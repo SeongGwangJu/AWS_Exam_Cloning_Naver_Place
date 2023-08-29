@@ -2,24 +2,22 @@ import React from "react";
 /** @jsxImportSource @emotion/react */
 import * as S from "./Style";
 import { MdLocationOn } from "react-icons/md";
-import img1 from "../../../../../images/KakaoTalk_20230826_194921654.jpg";
-import img2 from "../../../../../images/KakaoTalk_20230806_211510741_02.jpg";
-function ImgArea(props) {
+function ImgArea( {imgLink, imgLink2, location}) {
 	return (
 		<div css={S.SPhotoContainer}>
 			<button css={S.SBtnBox}>
 				<div css={S.SPhotoBoxs}>
 					<div css={S.SPhotoBox}>
 						<img
-							css={[S.SPhoto, S.SPhotoFirst]} src={img1} />
+							css={[S.SPhoto, S.SPhotoFirst]} src={imgLink} />
 					</div>
 					<div css={S.SPhotoBox}>
-						<img css={[S.SPhoto, S.SPhotoLast]} src={img2} />
+						<img css={[S.SPhoto, S.SPhotoLast]} src={imgLink2} />
 					</div>
 					<div css={S.SLocationContainer}>
 						<div css={S.SLocationBox}>
 							<MdLocationOn />
-							<span>부산시 금정구 최신 </span>
+							<span>{location}</span>
 						</div>
 					</div>
 				</div>

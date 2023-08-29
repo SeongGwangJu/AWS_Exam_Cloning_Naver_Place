@@ -11,7 +11,7 @@ export const SContainer = css`
 	margin: 0 auto;
 `;
 
-export const SMarginEffect = css`
+export const SMarginBottom = css`
 	position: absolute;
 	left: 0px;
 	width: 100%;

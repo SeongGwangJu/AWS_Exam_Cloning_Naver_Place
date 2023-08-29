@@ -69,6 +69,9 @@ export const SUserInfo = css`
 
 export const SSpanMargin = css`
 	margin-right: 8px;
+	& > em {
+		margin-left: 3px;
+	}
 `;
 
 export const SUserInfoRight = css`
