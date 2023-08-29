@@ -27,5 +27,6 @@ export const SEmoticon = css`
 `;
 
 export const SMoreSticker = css`
+	cursor: default;
 	font-weight: 600;
 `;

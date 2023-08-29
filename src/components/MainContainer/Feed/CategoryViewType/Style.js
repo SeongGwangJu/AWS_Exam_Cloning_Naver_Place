@@ -15,7 +15,12 @@ export const SCategoryBtnListBoxs = css`
 	width: 720px;
 	height: 35.33px;
 	position: relative;
-	overflow: hidden;
+	overflow-x: scroll;
+
+	::-webkit-scrollbar {
+		display: none;
+	}
+
 `;
 
 export const SHiddenScrollBox = (scrollValue) => css`
@@ -26,6 +31,8 @@ export const SHiddenScrollBox = (scrollValue) => css`
 	transform: translateX(-${scrollValue}px);
 	transition: transform 0.4s ease;
 	cursor: pointer;
+
+
 `;
 
 export const SCategoryBtnListBox = css`

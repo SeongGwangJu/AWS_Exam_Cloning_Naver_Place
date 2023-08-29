@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import * as S from "./Style";
 import { GrPrevious, GrNext } from "react-icons/gr";
 import CategoryBtnList from "../../../../constants/CategoryBtnList"
+import { useRecoilState } from "recoil";
+import { selectedCategoryState } from '../../../../store/selectedCategory';
 
 function CategoryCategory(props) {
 	// for 카테고리 버튼의 Active Style 변경
@@ -15,6 +17,8 @@ function CategoryCategory(props) {
 		useState(false);
 	const [isNextButtonsVisible, setIsNextButtonsVisible] = useState(true);
 	const [scrollValue, setScrollValue] = useState(0);
+	const [ selectedCategory, setSelectedCategory ] = useRecoilState(selectedCategoryState);
+	// const [selectedCategory, setSelectedCategory] = useState("all");
 	//버튼의 리스트 관리
 
 	//버튼의 위치를 어림잡아주는 함수
@@ -31,7 +35,7 @@ function CategoryCategory(props) {
 		return buttonLocation;
 	};
 
-	//next버튼의 visible 상태 update + 스크롤이 너무 많이 가지 않도록
+	//next버튼의 visible 상태 update와 최대스크롤을 제한하기 위해
 	//마지막 버튼의 위치를 구함
 	const LastBtnLocation = calculateScrollValueByBtnId(
 		CategoryBtnList.slice(-1)[0].id
@@ -57,11 +61,20 @@ function CategoryCategory(props) {
 		setIsPreviousButtonsVisible(false);
 		setIsNextButtonsVisible(false);
 	};
+
 	//카테고리 버튼을 클릭시
 	//스타일 + 스크롤 + '<>'버튼 visible 변경
 	const handleCategoryBtnClick = (id, name) => {
-		//id를 변경해 선택된 버튼만 스타일 변경해줌
-		setSelectedId(id);
+		//클릭시 버튼 스타일과 피드내용이 변함
+		if(id ===selectedId) { //똑같은 버튼을 누를 때
+			setSelectedId(0)
+			setSelectedCategory("all")
+		} else {
+			//id를 변경해 선택된 버튼만 스타일 변경해줌
+			setSelectedId(id);
+			setSelectedCategory(name);
+		}
+
 
 		// 누른 버튼의 위치에따라 스크롤과 버튼상태 변경함
 		if (calculateScrollValueByBtnId(id) < 370) {
