@@ -26,7 +26,7 @@ export const SPhotoBox = css`
 export const SPhoto = css`
 	width: 339px;
 	height: 360px;
-  
+
 `;
 
 export const SPhotoFirst = css`
