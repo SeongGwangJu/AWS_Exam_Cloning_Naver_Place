@@ -43,7 +43,6 @@ function CustomViewType(props) {
 								css={S.SViewTypeBtnList(
 									location.pathname === ViewTypeBtn.path
 								)}
-								key={ViewTypeBtn.id}
 								onClick={() => {
 									handleViewTypeBtnClick(ViewTypeBtn.path);
 								}}

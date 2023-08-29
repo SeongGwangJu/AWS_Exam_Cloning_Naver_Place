@@ -8,16 +8,14 @@ import { selectedCategoryState } from '../../../../store/selectedCategory';
 
 function CategoryCategory(props) {
 	// for 카테고리 버튼의 Active Style 변경
-	// let selectedId = 0;
 	const [selectedId, setSelectedId] = useState(0);
-	// const [ isSelected, setIsSelected ] = useState(false);
+	// for 카테고리 버튼에따른 내용 변경
+	const [ selectedCategory, setSelectedCategory ] = useRecoilState(selectedCategoryState);
 
 	// for 스크롤 버튼의 Visible값 변경
-	const [isPreviousButtonsVisible, setIsPreviousButtonsVisible] =
-		useState(false);
+	const [isPreviousButtonsVisible, setIsPreviousButtonsVisible] = useState(false);
 	const [isNextButtonsVisible, setIsNextButtonsVisible] = useState(true);
 	const [scrollValue, setScrollValue] = useState(0);
-	const [ selectedCategory, setSelectedCategory ] = useRecoilState(selectedCategoryState);
 	// const [selectedCategory, setSelectedCategory] = useState("all");
 	//버튼의 리스트 관리
 

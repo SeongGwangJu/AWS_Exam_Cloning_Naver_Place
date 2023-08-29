@@ -1,11 +1,10 @@
 import React, { useEffect, useRef } from "react";
 /** @jsxImportSource @emotion/react */
-import * as S from "./Style";
+// import * as S from "./Style";
 import CustomViewType from "./CustomViewType/CustomViewType";
 import CategoryViewType from "./CategoryViewType/CategoryViewType";
 import Content from "./Content/Content";
 import FeedList from "../../../constants/FeedList";
-import { selectedCategory } from "../../../store/selectedCategory";
 import { useRecoilState } from "recoil";
 import { selectedCategoryState } from '../../../store/selectedCategory';
 
@@ -36,9 +35,10 @@ function Feed(props) {
 					username={feed.username}
 					reviewCount={feed.reviewCount}
 					followerCount={feed.followerCount}
-					imgBoxCount={feed.imgBoxCount}
+					imgCount={feed.imgCount}
 					imgLink={feed.imgLink}
 					imgLink2={feed.imgLink2}
+					imgLink3={feed.imgLink3}
 					reviewTxt={feed.reviewTxt}
 					selectedStickerIds={feed.selectedStickerIds}
 					date={feed.date}

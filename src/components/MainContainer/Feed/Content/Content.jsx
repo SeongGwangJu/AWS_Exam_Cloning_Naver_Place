@@ -13,9 +13,10 @@ function Content({
 	username,
 	reviewCount,
 	followerCount,
-	imgBoxCount,
+	imgCount,
 	imgLink,
 	imgLink2,
+	imgLink3,
 	location,
 	reviewTxt,
 	selectedStickerIds,
@@ -34,9 +35,10 @@ function Content({
 						followerCount={followerCount}
 					/>
 					<ImgArea
-						imgBoxCount={imgBoxCount}
+						imgCount={imgCount}
 						imgLink={imgLink}
 						imgLink2={imgLink2}
+						imgLink3={imgLink3}
 						location={location}
 					/>
 					<ReviewTextArea reviewTxt={reviewTxt} />
