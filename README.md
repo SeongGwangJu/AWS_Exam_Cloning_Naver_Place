@@ -44,7 +44,9 @@
 <img src="https://github.com/SeongGwangJu/AWS_Exam_Cloning_Naver_Place_Project/assets/133538833/12d95fb1-4377-4026-ac01-3323e4cbe8fd" width="360px" height="280px"/>
 <img src="https://github.com/SeongGwangJu/AWS_Exam_Cloning_Naver_Place_Project/assets/133538833/0ea93aba-0c99-4472-9832-2d9eadff9738" width="360px" height="280px"/>
 <br></br>
+
 - 컨텐츠 상단의 전체 / 팔로잉 버튼 및 카테고리 버튼 클릭 시 내용 분류
+
 
 <img src="https://github.com/SeongGwangJu/AWS_Exam_Cloning_Naver_Place_Project/assets/133538833/d0fb3bb0-2df5-45d2-b8f2-4c866296b228" width="360px" height="280px"/>
 <br></br>
@@ -54,13 +56,14 @@
 <img src="https://github.com/SeongGwangJu/AWS_Exam_Cloning_Naver_Place_Project/assets/133538833/6bb7aa0c-1aba-4ad5-bad9-a3d0d271f5ee" width="720px" height="90px"/>
 <br></br>
 
+
 - 첨부한 이미지의 갯수에 따라 다른 레이아웃으로 이미지 출력
 
-
-<img src="https://github.com/SeongGwangJu/AWS_Exam_Cloning_Naver_Place_Project/assets/133538833/c629875a-575e-4c1b-bc12-16534b58d0e1" width="30%"/>
-<img src="https://github.com/SeongGwangJu/AWS_Exam_Cloning_Naver_Place_Project/assets/133538833/1d4e6efc-3d60-4f8b-b923-9f9c3a5eb24c" width="30%"/>
-<img src="https://github.com/SeongGwangJu/AWS_Exam_Cloning_Naver_Place_Project/assets/133538833/af6d7c5a-687a-4144-84a3-c4d895c460e4" width="30%"/>
+<img src="https://github.com/SeongGwangJu/AWS_Exam_Cloning_Naver_Place_Project/assets/133538833/c629875a-575e-4c1b-bc12-16534b58d0e1" width="26.5%" height="22%"/>
+<img src="https://github.com/SeongGwangJu/AWS_Exam_Cloning_Naver_Place_Project/assets/133538833/1d4e6efc-3d60-4f8b-b923-9f9c3a5eb24c" width="27%" height="25%"/>
+<img src="https://github.com/SeongGwangJu/AWS_Exam_Cloning_Naver_Place_Project/assets/133538833/af6d7c5a-687a-4144-84a3-c4d895c460e4" width="31.7%" height="32%"/>
 <br></br>
+
 
 - 정규화된 DB를 가정한 배열을 만들어 필요에 맞는 데이터를 찾아와 내용을 출력
 
