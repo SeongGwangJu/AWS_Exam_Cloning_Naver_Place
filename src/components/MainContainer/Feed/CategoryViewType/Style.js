@@ -20,7 +20,6 @@ export const SCategoryBtnListBoxs = css`
 	::-webkit-scrollbar {
 		display: none;
 	}
-
 `;
 
 export const SHiddenScrollBox = (scrollValue) => css`
@@ -31,8 +30,6 @@ export const SHiddenScrollBox = (scrollValue) => css`
 	transform: translateX(-${scrollValue}px);
 	transition: transform 0.4s ease;
 	cursor: pointer;
-
-
 `;
 
 export const SCategoryBtnListBox = css`
@@ -40,10 +37,10 @@ export const SCategoryBtnListBox = css`
 	height: 35.33px;
 
 	&:first-of-type {
-		padding: 0px 0px 0px 20px;
+		padding: 0px 0px 0px 10px;
 	}
 	&:last-child {
-		padding: 0px 20px 0px 6px;
+		padding: 0px 10px 0px 6px;
 	}
 `;
 

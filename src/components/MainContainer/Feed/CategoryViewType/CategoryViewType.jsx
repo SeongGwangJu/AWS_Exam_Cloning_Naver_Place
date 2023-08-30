@@ -16,32 +16,32 @@ function CategoryCategory(props) {
 	const [isPreviousButtonsVisible, setIsPreviousButtonsVisible] = useState(false);
 	const [isNextButtonsVisible, setIsNextButtonsVisible] = useState(true);
 	const [scrollValue, setScrollValue] = useState(0);
-	// const [selectedCategory, setSelectedCategory] = useState("all");
 	//버튼의 리스트 관리
 
 	//버튼의 위치를 어림잡아주는 함수
 	const calculateScrollValueByBtnId = (id) => {
 		let buttonNameLengthSum = 0;
 
+		//이전 버튼까지의 총 버튼 name값을 더함
 		for (let i = 0; i < id; i++) {
 			buttonNameLengthSum += CategoryBtnList[i].name.length;
 		}
 
 		//한글자마다 14px이 늘고
 		//버튼의 개수당 33.33px씩 늘어남
-		let buttonLocation = 14 + buttonNameLengthSum * 14 + id * 33.33;
+		let buttonLocation = buttonNameLengthSum * 14 + id * 33;
 		return buttonLocation;
 	};
 
 	//next버튼의 visible 상태 update와 최대스크롤을 제한하기 위해
-	//마지막 버튼의 위치를 구함
+	//마지막 버튼의 위치를 구함.
 	const LastBtnLocation = calculateScrollValueByBtnId(
-		CategoryBtnList.slice(-1)[0].id
+		CategoryBtnList.slice(-1)[ 0].id
 	);
 
 	//커서를 올리면 현재 스크롤된 정도에 따라 버튼 Visible상태를 변하게 함.
 	const handleMouseEnter = () => {
-		if (scrollValue > 370) {
+		if (scrollValue > 360) {
 			setIsPreviousButtonsVisible(true);
 		} else {
 			setIsPreviousButtonsVisible(false);
@@ -75,16 +75,16 @@ function CategoryCategory(props) {
 
 
 		// 누른 버튼의 위치에따라 스크롤과 버튼상태 변경함
-		if (calculateScrollValueByBtnId(id) < 370) {
+		if (calculateScrollValueByBtnId(id) < 360) {
 			//첫버튼이 보일 때
-			setScrollValue(-(calculateScrollValueByBtnId(id) - 370));
+			setScrollValue(-(calculateScrollValueByBtnId(id) - 360));
 			setIsPreviousButtonsVisible(false);
 
 			//처음 상태보다 스크롤이 조금이라도 증가했고
 			//마지막 버튼이 모두 보이지 않을 때
 		} else if (
-			calculateScrollValueByBtnId(id) > 370 &&
-			LastBtnLocation - calculateScrollValueByBtnId(id) > 370
+			calculateScrollValueByBtnId(id) > 360 &&
+			LastBtnLocation - calculateScrollValueByBtnId(id) > 360
 		) {
 			setScrollValue(calculateScrollValueByBtnId(id));
 			setIsPreviousButtonsVisible(true);
@@ -100,12 +100,12 @@ function CategoryCategory(props) {
 	//왼쪽버튼 클릭시 왼쪽으로 720px만큼 이동함
 	const handlePreviousBtnClick = () => {
 		// 720px만큼 이동하는 조건 : 적당히 오른쪽일때
-		if (scrollValue > 1090) {
+		if (scrollValue > 1080) {
 			setScrollValue(scrollValue - 720);
 
 			// 많이 옮길 필요가 없으면 적당히 옮기고 버튼 사라짐
 		} else {
-			setScrollValue(370);
+			setScrollValue(360);
 			setIsPreviousButtonsVisible(false);
 		}
 	};
@@ -113,7 +113,7 @@ function CategoryCategory(props) {
 	const handleNextBtnClick = () => {
 		//720px만큼 이동했을 때 마지막 버튼이 보일정도면
 		//최대치로 이동하고 다음 버튼이 사라진다
-		if (scrollValue > LastBtnLocation - 1090) {
+		if (scrollValue > LastBtnLocation - 1080) {
 			setScrollValue(LastBtnLocation - 330);
 			setIsNextButtonsVisible(false);
 
@@ -128,7 +128,8 @@ function CategoryCategory(props) {
 		<div css={S.SContainer}>
 			<div css={S.SCategoryBtnListBoxs}>
 				<div
-					css={S.SHiddenScrollBox(scrollValue - 370)}
+				//-360(720px의 1/2)을 해줘야 클릭한 버튼이 중앙으로 간다.
+					css={S.SHiddenScrollBox(scrollValue - 360)}
 					onMouseEnter={handleMouseEnter}
 					onMouseLeave={handleMouseLeave}
 				>

@@ -11,7 +11,7 @@ export const SCommon = css`
         width: 5px;
         background-color: #dbdbdb40;
     }
-    
+
     *::-webkit-scrollbar-thumb{
         border-radius: 5px;
         background-color: #99999970;
@@ -20,6 +20,5 @@ export const SCommon = css`
     button {
         background-color: transparent;
         border: none;
-        
     }
 `;

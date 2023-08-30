@@ -29,8 +29,12 @@ function CustomViewType(props) {
 	];
 
 	const handleViewTypeBtnClick = (path) => {
-		navigate(path);
-		setIsSelected(true);
+		if(path !== ViewTypeBtnList[2].path) {
+			navigate(path);
+			setIsSelected(true);
+		} else {
+			alert("네이버 로그인 하신 후 이용해 주시기 바랍니다.");
+		}
 	};
 
 	return (
@@ -46,6 +50,7 @@ function CustomViewType(props) {
 								onClick={() => {
 									handleViewTypeBtnClick(ViewTypeBtn.path);
 								}}
+								key={ViewTypeBtn.id}
 							>
 								{ViewTypeBtn.name}
 							</button>

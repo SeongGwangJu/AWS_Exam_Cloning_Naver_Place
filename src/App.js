@@ -5,13 +5,14 @@ import { Global } from '@emotion/react';
 /** @jsxImportSource @emotion/react */
 import * as S from "./styles/common"
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import FeedPage from './pages/FeedPage/FeedPage';
+import FeedPage from './pages/FeedPage/FeedPage'
 import MainLayout from './components/layouts/MainLayout/MainLayout';
 import BookedPage from './pages/BookedPage/BookedPage';
 import TimelinePage from './pages/TimelinePage/TimelinePage';
 import ReviewPage from './pages/ReviewPage/ReviewPage';
 import SavedPage from './pages/SavedPage/SavedPage';
 import { useEffect, useRef } from 'react';
+import FollowingPage from './pages/FeedPage/FollowingPage/FollowingPage';
 
 function App() {
 
@@ -33,7 +34,7 @@ function App() {
     <MainLayout>
       <Routes>
         <Route path="/feed" element={ <FeedPage /> } />
-        <Route path="/feed/following" element={ <FeedPage /> } />
+        <Route path="/feed/following" element={ <FollowingPage /> } />
         <Route path="/feed/favorited" element={ <FeedPage /> } />
         <Route path="/timeline" element={ <TimelinePage /> } />
         <Route path="/review" element={ <ReviewPage /> } />

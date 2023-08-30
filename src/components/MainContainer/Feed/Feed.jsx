@@ -11,6 +11,7 @@ import { selectedCategoryState } from '../../../store/selectedCategory';
 function Feed(props) {
 	const [ selectedCategory, setSelectedCategory ] = useRecoilState(selectedCategoryState);
 
+	//처음 실행하면 SelectedCategory가 "all로 변함"
 	const isFirstLoad = useRef(true);
 	useEffect(() => {
 	if (isFirstLoad.current) {
@@ -24,18 +25,13 @@ function Feed(props) {
 		<>
 			<CustomViewType />
 			<CategoryViewType />
-			{/*  */}
 			{FeedList.filter(feed => (selectedCategory ==="all") ?
 			true : (selectedCategory === feed.category)).map((feed) => (
 				<Content
 					id={feed.id}
 					category={feed.category}
 					location={feed.location}
-					profileImg={feed.profileImg}
-					username={feed.username}
-					reviewCount={feed.reviewCount}
-					followerCount={feed.followerCount}
-					imgCount={feed.imgCount}
+					userId={feed.userId}
 					imgLink={feed.imgLink}
 					imgLink2={feed.imgLink2}
 					imgLink3={feed.imgLink3}

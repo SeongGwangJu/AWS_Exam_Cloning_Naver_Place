@@ -36,14 +36,14 @@ export const SPhotoOfTwo = css`
 		height: 360px;
 		border-top-left-radius: 8px;
 		border-bottom-left-radius: 8px;
-	}
+	};
 
 	:nth-of-type(2) {
 		width: 291.2px;
 		height: 360px;
 		border-top-right-radius: 8px;
 		border-bottom-right-radius: 8px;
-	}
+	};
 `;
 
 export const SPhotoBox2 = css`
@@ -58,15 +58,15 @@ export const SPhotoOfThree = css`
 	height: 179px;
 	margin-left: 2px;
 
-	:first-child {
+	:first-of-type {
 		border-top-right-radius: 8px;
 		margin-bottom: 2px;
-	}
+	};
 
-	:nth-child(2) {
+	:nth-of-type(2) {
 		border-bottom-right-radius: 8px;
 
-	}
+	};
 `;
 
 export const SLocationContainer = css`
@@ -90,5 +90,5 @@ export const SLocationBox = css`
 
 	& > span {
 		margin-left: 3px;
-	}
+	};
 `;

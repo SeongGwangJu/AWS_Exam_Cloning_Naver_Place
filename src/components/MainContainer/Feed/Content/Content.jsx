@@ -7,13 +7,10 @@ import ReviewTextArea from "./ReviewTextArea/ReviewTextArea";
 import Sticker from "./Sticker/Sticker";
 import FeedbackAndDate from "./FeedbackAndDate/FeedbackAndDate";
 import Location from "./Location/Location";
+import UserData from "../../../../constants/UserData";
 
 function Content({
-	profileImg,
-	username,
-	reviewCount,
-	followerCount,
-	imgCount,
+	userId,
 	imgLink,
 	imgLink2,
 	imgLink3,
@@ -24,22 +21,25 @@ function Content({
 	placeName,
 	category,
 }) {
+
+	const getUserDatabyId = UserData[userId-1];
+
 	return (
 		<ul css={S.SLayout}>
 			<li>
 				<div css={S.SContainer}>
 					<UserInfo
-						profileImg={profileImg}
-						username={username}
-						reviewCount={reviewCount}
-						followerCount={followerCount}
+						profileImg={getUserDatabyId.profileImg}
+						username={getUserDatabyId.username}
+						reviewCount={getUserDatabyId.reviewCount}
+						followerCount={getUserDatabyId.followerCount}
 					/>
 					<ImgArea
-						imgCount={imgCount}
 						imgLink={imgLink}
 						imgLink2={imgLink2}
 						imgLink3={imgLink3}
 						location={location}
+						date={date}
 					/>
 					<ReviewTextArea reviewTxt={reviewTxt} />
 					<Sticker selectedStickerIds={selectedStickerIds} />
