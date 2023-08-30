@@ -1,5 +1,8 @@
 # 네이버플레이스 클론코딩 프로젝트
-수강 중인 AWS산대특 과정에서 학습한 HTML, CSS, JavaScript, React 능력을 평가하기 위해
+
+**산업대응특화훈련 AWS 기반 공공ㆍ빅데이터 활용 웹서비스 개발자 양성과정**에서
+
+학습한 **HTML, CSS, JavaScript, React** 능력을 평가(시험)하기 위해
 
 [네이버 MY플레이스](https://m.place.naver.com/my/feed) 페이지를 클론코딩하는 개인프로젝트 입니다.
 
